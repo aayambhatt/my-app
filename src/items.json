@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "names": "Diary of a wimpy kid",
+    "price": 699
+  },
+  {
+    "id": 2,
+    "names": "Atomic Habits",
+    "price": 899
+  }
+]
