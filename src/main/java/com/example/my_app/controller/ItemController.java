@@ -1,10 +1,10 @@
 package com.example.my_app.controller;
 
+import com.example.my_app.annotations.LogExecution;
 import com.example.my_app.model.Item;
 import org.springframework.web.bind.annotation.*;
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.core.type.TypeReference;
-
 import java.io.File;
 import java.util.List;
 
@@ -12,9 +12,10 @@ import java.util.List;
 public class ItemController {
 
     private static final ObjectMapper objectMapper = new ObjectMapper();
-    private File file = new File("src/item.json");
+    private final File file = new File("src/item.json");
 
     @GetMapping("/read")
+    @LogExecution
     public List<Item> readItems() {
         return objectMapper.readValue(file,
                 new TypeReference<List<Item>>() {
